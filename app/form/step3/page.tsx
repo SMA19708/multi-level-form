@@ -71,7 +71,7 @@ const DisplayData = () => {
       </div>
 
  <button
-  onClick={() => router.push("/")}
+  onClick={() => router.push("/form")}
   style={{
     width: "100%",
     marginTop: "20px",
