@@ -1,26 +1,100 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Layout */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.app-header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 16px 32px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.app-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-footer {
+  background-color: #1e40af;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Form styling */
+.centered-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  background-color: #ffffff;
+  padding: 24px 28px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2);
+}
+
+.form-card label {
+  display: block;
+  margin-top: 14px;
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+.form-card input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #93c5fd;
+}
+
+.form-card input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.form-card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-card button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Messages */
+.error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.success {
+  color: #1d4ed8;
+  margin-top: 12px;
+  font-weight: bold;
 }
