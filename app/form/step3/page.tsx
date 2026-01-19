@@ -87,7 +87,6 @@ const DisplayData = () => {
   Go Home
 </button>
 
-
     </div>
   );
 };
