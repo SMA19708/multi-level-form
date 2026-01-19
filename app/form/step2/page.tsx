@@ -13,7 +13,7 @@ type FormDataType = {
   timezone: string;
 };
 
-type ErrorType = Partial<Record<keyof FormDataType, string>>;
+type ErrorType = Partial<FormDataType>;
 
 const Step2 = () => {
    const router = useRouter();
