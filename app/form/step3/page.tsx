@@ -4,19 +4,23 @@ import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { readTempFile, deleteTempFile } from "@/app/components/utilis/fileManager";
 
-const DisplayData = () => {
+const DisplayData = () => 
+{
   const router = useRouter();
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const hasReadData = useRef(false);
 
-  useEffect(() => {
-    const loadData = () => {
+  useEffect(() => 
+  {
+    const loadData = () => 
+    {
       if (hasReadData.current) return;
 
       const tempKey = sessionStorage.getItem("tempFileKey");
 
-      if (!tempKey) {
+      if (!tempKey) 
+      {
         alert("Temporary data missing. Redirecting to Step 1.");
         router.push("/form/step1");
         return;
@@ -24,7 +28,8 @@ const DisplayData = () => {
 
       const fileData = readTempFile(tempKey);
 
-      if (!fileData) {
+      if (!fileData) 
+      {
         alert("Temporary data missing. Redirecting to Step 1.");
         router.push("/form/step1");
         return;
@@ -38,18 +43,23 @@ const DisplayData = () => {
     loadData();
   }, [router]);
 
-  useEffect(() => {
-    return () => {
+  useEffect(() => 
+  {
+    return () => 
+    {
       const tempKey = sessionStorage.getItem("tempFileKey");
-      if (tempKey) {
+      if (tempKey) 
+      {
         deleteTempFile(tempKey);
         sessionStorage.removeItem("tempFileKey");
       }
     };
   }, []);
 
-  const renderValue = (value: any) => {
-    if (typeof value === "object" && value !== null) {
+  const renderValue = (value: any) => 
+  {
+    if (typeof value === "object" && value !== null) 
+    {
       return <pre className="bg-gray-100 p-2 rounded text-sm">{JSON.stringify(value, null, 2)}</pre>;
     }
     return <span className="font-medium">{String(value)}</span>;
@@ -72,7 +82,9 @@ const DisplayData = () => {
 
  <button
   onClick={() => router.push("/form")}
-  style={{
+  style=
+  {
+    {
     width: "100%",
     marginTop: "20px",
     padding: "14px",
@@ -82,7 +94,8 @@ const DisplayData = () => {
     border: "none",
     borderRadius: "6px",
     cursor: "pointer"
-  }}
+    }
+  }
 >
   Go Home
 </button>

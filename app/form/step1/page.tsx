@@ -15,7 +15,8 @@ type ErrorType = Partial<FormDataType>;
 const Step1 = () => {
   const router = useRouter();
 
-  const [formData, setFormData] = useState<FormDataType>({
+  const [formData, setFormData] = useState<FormDataType>(
+  {
     name: "",
     email: "",
     username: "",
@@ -27,34 +28,47 @@ const Step1 = () => {
   // Input change handler
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData((prev) => 
+      (
+    {
       ...prev,
       [name]: value,
-    }));
+    }
+  ));
   };
 
   // Form validation
-  const validateForm = (): boolean => {
+  const validateForm = (): boolean => 
+  {
     const tempErrors: ErrorType = {};
 
     // Name validation
-    if (!formData.name.trim()) {
+    if (!formData.name.trim()) 
+    {
       tempErrors.name = "Name is required";
-    } else if (!/^[A-Za-z\s]{3,}$/.test(formData.name)) {
+    } 
+    else if (!/^[A-Za-z\s]{3,}$/.test(formData.name)) 
+    {
       tempErrors.name = "Name must contain only letters (min 3 characters)";
     }
 
     // Email validation
-    if (!formData.email.trim()) {
+    if (!formData.email.trim()) 
+    {
       tempErrors.email = "Email is required";
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+    } 
+    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) 
+    {
       tempErrors.email = "Invalid email format";
     }
 
     // Username validation
-    if (!formData.username.trim()) {
+    if (!formData.username.trim()) 
+    {
       tempErrors.username = "Username is required";
-    } else if (!/^[A-Za-z\s]{6,}$/.test(formData.username)) {
+    } 
+    else if (!/^[A-Za-z\s]{6,}$/.test(formData.username)) 
+    {
       tempErrors.username =
         "Username must contain only letters (min 6 characters)";
     }
@@ -64,7 +78,8 @@ const Step1 = () => {
   };
 
   // Submit handler
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => 
+  {
     e.preventDefault();
     setSuccessMsg("");
 

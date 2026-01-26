@@ -25,8 +25,8 @@ const MultiStepFormStartPage = () => {
             alignContent: "center",
             marginTop: "16px",
             padding: "12px 24px",
-            backgroundColor: "#2563eb", // blue
-            color: "#ffffff",           // white text
+            backgroundColor: "#2563eb", 
+            color: "#ffffff",           
             fontSize: "16px",
             fontWeight: "bold",
             border: "none",
